@@ -19,4 +19,4 @@ totalResult = xResult + yResult + zResult
 # konversio kilogrammoiksi, jaetaan tuhannella.
 totalResultKilograms = totalResult / 1000
 
-print(totalResultKilograms, " kilogrammaa.")
+print({totalResultKilograms}, " kilogrammaa.")
