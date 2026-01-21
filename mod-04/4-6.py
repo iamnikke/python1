@@ -14,3 +14,36 @@
 # Lopuksi ohjelma tulostaa piin likiarvon käyttäjälle.
 # (Huomaa, että jokaisesta arvotusta pisteestä (x,y) on helppoa testata onko se yksikköympyrän A sisällä: riittää testata,
 # toteuttaako piste epäyhtälön x^2+y^2<1.)
+
+import random
+
+pointsAmount = int(input("Anna pisteiden määrä: "))
+
+pointsAccounted = 0
+pointsHit = 0
+
+# While loop niin pitkään kun käsitellyt pisteet on vähemmän kuin käyttäjän antama pisteiden määrä
+while pointsAccounted < pointsAmount:
+
+    # Muuttuja määrittämään alueen koon; suurempi arvo = tarkempi tulos
+    canvasSize = 100000
+
+    # Generoi piste alueelle, jaettuna alueen koko palauttaa sijoituksen -1 -> 1 koordinaattien välille
+    x = random.randint(-canvasSize, canvasSize) / canvasSize
+    y = random.randint(-canvasSize, canvasSize) / canvasSize
+
+    # Jos x^2 + y^2 on pienempi kuin ympyrän säde (1), niin lisätään osuma.
+    if x*x + y*y < 1:
+        pointsHit = pointsHit + 1
+
+    # "Muutetaan" / lisätään piste käsitellyksi while loopin sulkemiseksi.
+    pointsAccounted = pointsAccounted + 1
+
+print("Osumat:", pointsHit, "/", pointsAmount)
+
+# Bonari osumatarkkuus prosentteina
+pointsHitAccuracy = pointsHit / pointsAmount * 100
+print("Osumatarkkuus:", int(pointsHitAccuracy), "%")
+
+# Piin likiarvo (π≈4n/N)
+print("π:n Likiarvo", 4 * pointsHit / pointsAmount)
