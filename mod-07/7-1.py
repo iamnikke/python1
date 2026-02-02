@@ -22,7 +22,8 @@ autumnMonths = (9, 10, 11)
 
 userInput = int(input("Syötä kuukauden numero: "))
 
-while userInput != 0:
+# 0 lopettaa ohjelman, muuten toista kysymystä
+while True:
     if userInput in winterMonths:
 
         # Hae vuodenajan TALVI label
