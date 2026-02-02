@@ -59,5 +59,7 @@ while userInput != 0:
         # Pyydä uusi kuukausi
         userInput = int(input("Syötä kuukauden numero: "))
 
+# Kuukausi ei ollut 1-12
     else:
-        print("hämärä kuukausi")
+        print("heippa")
+        break
