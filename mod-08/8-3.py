@@ -35,9 +35,11 @@ def calculateDistance(icao1, icao2):
     # indeksi jota käytetään for loopissa
     i = 1
 
+    # For-loop tulosten lokeroimiseksi
     for row in result:
-        print(row[0], row[1])
+        # Lisää tuloksen koordinaatit sanakirjaan
         airportData[i] = row[0], row[1]
+        # Nosta indeksiä seuraavan rivin käsittelyksi
         i += 1
 
     # debug viesti
